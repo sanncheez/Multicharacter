@@ -1,0 +1,311 @@
+@import url("https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap");
+@import url('https://fonts.cdnfonts.com/css/gobold');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Gobold', sans-serif;
+}
+
+/* body {
+    background-image: url('https://cdn.discordapp.com/attachments/963491126172586117/1331636227455320106/image.png?ex=67c123a1&is=67bfd221&hm=ff2f4a606851349d31ebd3c93fcc46589eb26f7c925a8f9f99794fe985b26449&');
+} */
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    position: relative;
+    background: linear-gradient(90deg, 
+        rgba(0, 0, 0, 0.9) 0%,
+        rgba(0, 0, 0, 0) 55%
+    );
+}
+
+/* Bloque de personajes */
+.characters-block {
+    position: absolute;
+    left: 0vw;
+    top: 20%;
+    transform: translateY(-50%);
+    width: 22vw;
+    padding: 2vh;
+}
+
+.characters-block span {
+    color: white;
+    font-size: 2.25vh;
+    font-weight: bold;
+    letter-spacing: 0.1vh;
+}
+
+.characters-list {
+    margin-top: 2vh;
+    max-height: 60vh;
+    overflow-y: auto;
+}
+
+/* Slots de personajes */
+.character-slot {
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 0.3vh;
+    margin-bottom: 1vh;
+    padding: 1.5vh;
+    color: white;
+    cursor: pointer;
+    transition: all 0.2s;
+
+}
+
+.character-slot:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.character-slot.selected {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.char-info-preview h3 {
+    font-size: 1.8vh;
+    margin-bottom: 0.5vh;
+}
+
+.char-info-preview p {
+    font-size: 1.4vh;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Panel de información */
+.character-info {
+    position: absolute;
+    right: 4vw;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(23, 23, 23, 0.95);
+    width: 25vw;
+    padding: 2vh;
+    border-radius: 0.4vh;
+    color: white;
+    box-shadow: 0 0 10px rgba(11, 12, 11, 0.5);
+}
+
+.character-info h2 {
+    font-size: 2.2vh;
+    margin-bottom: 2vh;
+    letter-spacing: 0.1vh;
+}
+
+.info-content {
+    margin: 2vh 0;
+}
+
+.info-content p {
+    margin: 0.5vh 0;
+    font-size: 1.4vh;
+    color: white;
+}
+
+.info-content span {
+    margin-left: 0.5vh;
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: 500;
+}
+
+/* Botones */
+.buttons {
+    display: flex;
+    gap: 1vh;
+    margin-top: 2vh;
+}
+
+button {
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: white;
+    padding: 1vh 2vh;
+    border-radius: 0.3vh;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-size: 1.4vh;
+    letter-spacing: 0.1vh;
+    width: 100%;
+}
+
+button:hover {
+    background-color: rgba(50, 196, 62, 0.25);
+    border: 1px solid rgba(50, 196, 99, 0.5);
+}
+
+/* Formulario de registro */
+.character-register {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.register-content {
+    padding: 2vw;
+    border-radius: 0.5vh;
+    width: 30vw;
+    color: white;
+}
+
+.form-group {
+    margin: 1.5vh 0;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.8vh;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1.4vh;
+    letter-spacing: 0.1vh;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 1.2vh;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 0.3vh;
+    color: white;
+    font-size: 1.4vh;
+    outline: none;
+    transition: all 0.2s;
+}
+
+.form-group input:hover,
+.form-group select:hover {
+    background-color: rgba(255, 97, 97, 0.25);
+    color: white;
+    border: 1px solid rgba(255, 97, 97, 0.5);
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    background-color: rgba(255, 97, 97, 0.4);
+    border-color: rgba(255, 97, 97, 0.8);
+}
+
+/* Botones del formulario */
+.register-buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 1vh;
+    margin-top: 3vh;
+}
+
+#confirm-create,
+#cancel-create {
+    padding: 1.2vh;
+    font-size: 1.4vh;
+    width: 50%;
+}
+
+#confirm-create {
+    background-color: rgba(50, 196, 62, 0.25);
+    border: 1px solid rgba(50, 196, 99, 0.5);
+}
+
+#confirm-create:hover {
+    background-color: rgba(50, 196, 62, 0.4);
+    border-color: rgba(50, 196, 99, 0.8);
+}
+
+#cancel-create {
+    background-color: rgba(196, 50, 50, 0.25);
+    border: 1px solid rgba(196, 50, 50, 0.5);
+}
+
+#cancel-create:hover {
+    background-color: rgba(196, 50, 50, 0.4);
+    border-color: rgba(196, 50, 50, 0.8);
+}
+
+/* Scrollbar personalizada */
+::-webkit-scrollbar {
+    width: 0.5vh;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 0.3vh;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(124, 97, 255, 0.3);
+    border-radius: 0.3vh;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(124, 97, 255, 0.5);
+}
+
+.animation-container {
+    margin: 20px;
+    position: absolute;
+    left: 0px;
+    top: 310px;
+}
+
+.select-wrapper {
+    position: relative;
+    width: 300px;
+}
+
+.select-wrapper i {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    pointer-events: none;
+}
+
+.select-wrapper select {
+    width: 100%;
+    padding: 8px 10px 8px 35px;
+    border-radius: 4px;
+    background: none;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    outline: none;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+.select-wrapper select:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.select-wrapper select:focus {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+.select-wrapper select option {
+    background-color: rgba(23, 23, 23, 0.95);
+    color: white;
+}
+
+/* Asegurarse de que no herede estilos del form-group */
+.animation-container .select-wrapper select:hover,
+.animation-container .select-wrapper select:focus {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
